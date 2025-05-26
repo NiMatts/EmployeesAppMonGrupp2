@@ -15,6 +15,16 @@ namespace EmployeesApp.Terminal
             {
                 Console.WriteLine(employee.Name);
             }
+            try
+            {
+                var result = service.GetById(62);
+                Console.WriteLine($"Employee: {result.Name}");
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine($"Processing failed: {e.Message}");
+            }
+
         }
     }
 }
