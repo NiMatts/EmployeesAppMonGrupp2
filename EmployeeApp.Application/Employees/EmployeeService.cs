@@ -4,10 +4,6 @@ namespace EmployeesApp.Application.Employees
 {
     public class EmployeeService(IEmployeeRepository employeeRepository) : IEmployeeService
     {
-        public EmployeeService()
-        {
-           
-        }
 
         public void Add(Employee employee)
         {

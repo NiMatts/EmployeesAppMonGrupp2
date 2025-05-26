@@ -1,4 +1,5 @@
 ﻿using EmployeesApp.Application.Employees;
+using EmployeesApp.Infrastructure.Persistance.Repositories;
 
 namespace EmployeesApp.Terminal
 {
@@ -6,14 +7,14 @@ namespace EmployeesApp.Terminal
     {
         static void Main(string[] args)
         {
+            var repository = new EmployeeRepository();
+            var service = new EmployeeService(repository);
 
-            //Console.WriteLine("Hello, World!");
-            //var service = new IEmployeeService();
-            //var model = service.GetAll();
-            //foreach (var employee in model)
-            //{
-            //    Console.WriteLine(employee);
-            //}
+            var employees = service.GetAll();
+            foreach (var employee in employees)
+            {
+                Console.WriteLine(employee.Name);
+            }
         }
     }
 }
