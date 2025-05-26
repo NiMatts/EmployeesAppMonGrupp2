@@ -1,9 +1,14 @@
-﻿using EmployeesApp.Web.Models;
+﻿using EmployeesApp.Domain;
 
-namespace EmployeesApp.Web.Services
+namespace EmployeesApp.Application.Employees
 {
     public class EmployeeService(IEmployeeRepository employeeRepository) : IEmployeeService
     {
+        public EmployeeService()
+        {
+           
+        }
+
         public void Add(Employee employee)
         {
             if(employee == null)

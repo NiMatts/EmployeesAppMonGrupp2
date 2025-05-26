@@ -1,4 +1,4 @@
-﻿using EmployeesApp.Web.Models;
+﻿using EmployeesApp.Application.Employees;
 using System.ComponentModel.DataAnnotations;
 
 namespace EmployeesApp.Web.Views.Employees
@@ -6,7 +6,7 @@ namespace EmployeesApp.Web.Views.Employees
     public class CreateVM
     {
         [Required(ErrorMessage = "You must specify a name")]
-        [SuspiciousPerson("Pontus Wittenmark", ErrorMessage = "Suspicious person detected!")]
+        //[SuspiciousPerson("Pontus Wittenmark", ErrorMessage = "Suspicious person detected!")]
         public required string Name { get; set; }
 
         [Display(Name = "E-mail")]

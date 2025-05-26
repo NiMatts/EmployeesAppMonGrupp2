@@ -1,5 +1,5 @@
-﻿using EmployeesApp.Web.Models;
-using EmployeesApp.Web.Services;
+﻿using EmployeesApp.Application.Employees;
+using EmployeesApp.Domain;
 using EmployeesApp.Web.Views.Employees;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,7 +34,7 @@ namespace EmployeesApp.Web.Controllers
         }
 
         [HttpPost("create")]
-        [ServiceFilter(typeof(MyLogServiceFilterAttribute))]
+        //[ServiceFilter(typeof(MyLogServiceFilterAttribute))]
         public IActionResult Create(CreateVM viewModel)
         {
             if (!ModelState.IsValid)
@@ -51,7 +51,7 @@ namespace EmployeesApp.Web.Controllers
         }
 
         [HttpGet("details/{id}")]
-        [TypeFilter(typeof(MyLogTypeFilterAttribute))]
+        //[TypeFilter(typeof(MyLogTypeFilterAttribute))]
         public IActionResult Details(int id)
         {
             var model = service.GetById(id);

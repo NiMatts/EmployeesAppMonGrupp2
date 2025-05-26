@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EmployeeApp.Infrastructure\EmployeeApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\EmployeeApp.Application\EmployeesApp.Application.csproj" />
+    <ProjectReference Include="..\EmployeeApp.Infrastructure\EmployeesApp.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

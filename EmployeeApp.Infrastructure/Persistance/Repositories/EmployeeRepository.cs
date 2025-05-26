@@ -1,6 +1,7 @@
-﻿using EmployeesApp.Web.Models;
+﻿using EmployeesApp.Application.Employees;
+using EmployeesApp.Domain;
 
-namespace EmployeesApp.Web.Services
+namespace EmployeesApp.Infrastructure.Persistance.Repositories
 {
     public class EmployeeRepository : IEmployeeService, IEmployeeRepository
     {

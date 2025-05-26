@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace EmployeesApp.Web.Models
+namespace EmployeesApp.Domain
 {
     public class SuspiciousPersonAttribute(string name) : ValidationAttribute
     {

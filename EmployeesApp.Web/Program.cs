@@ -1,6 +1,5 @@
-using EmployeesApp.Web.Models;
-using EmployeesApp.Web.Services;
-
+using EmployeesApp.Application.Employees;
+using EmployeesApp.Infrastructure.Persistance.Repositories;
 namespace EmployeesApp.Web
 {
     public class Program
@@ -9,11 +8,13 @@ namespace EmployeesApp.Web
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddTransient<IEmployeeService, EmployeeService>();
+            builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
             //builder.Services.AddTransient<EmployeeService>();
             //builder.Services.AddSingleton<EmployeeService>();
-            builder.Services.AddSingleton<IEmployeeService, EmployeeService>();
             //builder.Services.AddSingleton<IEmployeeService, OtherEmployeeService>();
-            builder.Services.AddScoped<MyLogServiceFilterAttribute>();
+            //builder.Services.AddScoped<MyLogServiceFilterAttribute>();
             var app = builder.Build();
             app.UseStaticFiles();
             app.MapControllers();
