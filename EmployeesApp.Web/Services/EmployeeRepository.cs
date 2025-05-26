@@ -2,39 +2,39 @@
 
 namespace EmployeesApp.Web.Services
 {
-    public class OtherEmployeeService : IEmployeeService
+    public class EmployeeRepository : IEmployeeService, IEmployeeRepository
     {
         readonly List<Employee> employees =
         [
             new Employee()
             {
-                Id = 1000,
-                Name = "Karl XII",
-                Email = "karl.xii@outlook.com",
+                Id = 562,
+                Name = "Anders Hejlsberg",
+                Email = "Anders.Hejlsberg@outlook.com",
             },
             new Employee()
             {
-                Id = 2002,
-                Name = "Drottning Kristina",
-                Email = "admin.drottning kristina@outlook.com",
+                Id = 62,
+                Name = "Kathleen Dollard",
+                Email = "k.d@outlook.com",
             },
             new Employee()
             {
-                Id = 4400,
-                Name = "Gustav III",
-                Email = "gustav.iii@outlook.com",
+                Id = 15662,
+                Name = "Mads Torgersen",
+                Email = "Admin.Torgersen@outlook.com",
             },
             new Employee()
             {
-                Id = 3030,
-                Name = "Margareta Valdemarsdotter",
-                Email = "margareta.valdemarsdotter@outlook.com",
+                Id = 52,
+                Name = "Scott Hanselman",
+                Email = "s.h@outlook.com",
             },
             new Employee()
             {
-                Id = 5555,
-                Name = "Gustav Vasa",
-                Email = "gustav.vasa@outlook.com",
+                Id = 563,
+                Name = "Jon Skeet",
+                Email = "j.s@outlook.com",
             },
         ];
 
@@ -62,4 +62,5 @@ namespace EmployeesApp.Web.Services
         public bool CheckIsVIP(Employee employee) =>
             employee.Email.StartsWith("ADMIN", StringComparison.CurrentCultureIgnoreCase);
     }
+
 }
